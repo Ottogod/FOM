@@ -1,10 +1,10 @@
-function TraceTI(f0, nb_points, Fs)
-    t = (0:nb_points-1)/Fs
-    x = sin(2*pi*f0*t)
+function TraceTI(f0, duree, Fs)
+    t = 0:1/Fs:duree-1/Fs
+    x = cos(2*pi*f0*t)
     figure
     plot(t,x, 'b') 
     ylim([-1.5, 1.5])
-    title("Spectre temporel")
+    title("Spectre temporel") 
 end
 
 %{
