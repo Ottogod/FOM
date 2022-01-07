@@ -7,11 +7,23 @@ function s = ook(bin, Ts, Fs, fc, Amax)
     j=1
     for i=1:nb_motifs
         t = (i-1)*Ts  
-           while T(j)>=t && T(j)< t+Ts %tricky les indices 2
+           while T(j)>=t && T(j)<= t+Ts 
                 if bin(i)==1
-                    s(j)=c(j)
+                    s(1,j)=c(1,j)
                 end
-                j=j+1
+                if j== length(T)
+                    break 
+                end
+                if j< length(T)
+                    j=j+1
+                end
+                
            end
     end
 end
+%{
+Impémentation d'une modulation OOK. On regarde le vecteur binaire bin, aux
+endroits où sont placés des 1, le signal modulé va prendre les valeurs de
+la port
+%}
+

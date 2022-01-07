@@ -3,6 +3,8 @@ function TraceTI(f0, duree, Fs)
     x = cos(2*pi*f0*t)
     figure
     plot(t,x, 'b') 
+    xlabel('t (s)')
+    ylabel('x(t)')
     ylim([-1.5, 1.5])
     title("Spectre temporel de x") 
 end

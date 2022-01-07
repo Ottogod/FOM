@@ -4,6 +4,8 @@ function TraceFFT(f0, nb_points, Fs)
     Xf = abs(fftshift(fft(x))) 
     figure
     plot(t, Xf, 'r') 
+    xlabel('f (Hz)')
+    ylabel('X(f)')
     title('Spectre fréquentiel en amplitude de x')
 
 end
