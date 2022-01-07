@@ -4,7 +4,7 @@ function TraceTI(f0, duree, Fs)
     figure
     plot(t,x, 'b') 
     ylim([-1.5, 1.5])
-    title("Spectre temporel") 
+    title("Spectre temporel de x") 
 end
 
 %{
