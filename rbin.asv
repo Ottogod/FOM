@@ -1,0 +1,6 @@
+function X = rbin(n)
+X = randn(1,n)>0 
+end
+%{%}
+%{ avec randn on génère un vecteur ligne de n colonnes de réels aléatoire 
+% suivant une loi normale%}
