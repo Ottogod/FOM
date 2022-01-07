@@ -1,16 +1,17 @@
 function s = ook(bin, Ts, Fs, fc, Amax)
     nb_motifs = length(bin)
-    nb_points = nb_motifs*Ts
-    t = (0:nb_points-1)/Fs
-    c = Amax*cos(2*pi*fc*t)
-    s = zeros(nb_points)
+    duree = nb_motifs*Ts
+    T = 0:1/Fs:duree-1/Fs
+    c = Amax*cos(2*pi*fc*T)
+    s = zeros(length(T),1)'
+    j=1
     for i=1:nb_motifs
-        t = (i-1)*Ts+ 1
-        if bin(i)==1
-            for j=t:t+Ts
-                s(j)=c(j)
-                print(j)
-            end
-        end
+        t = (i-1)*Ts  
+           while T(j)>=t && T(j)< t+Ts %tricky les indices 2
+                if bin(i)==1
+                    s(j)=c(j)
+                end
+                j=j+1
+           end
     end
 end
