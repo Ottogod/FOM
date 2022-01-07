@@ -1,3 +1,4 @@
+%Q1)
 function TraceFFT(f0, nb_points, Fs)
     t = (0:nb_points-1)/Fs
     x = cos(2*pi*f0*t)

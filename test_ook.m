@@ -1,6 +1,7 @@
+%Q3)
 function test_ook(bin)
     %{
-    Cette fonction test ne prend en paramètre que le vecteur binaire bin
+    Cette fonction test ne prend en paramètre qu'un vecteur binaire bin
     déclaré avec bin = rbin(n), avec n le nombre de bits contenus. Par
     exemple on pourrait avoir rbin(5) = 1 0 0 1 1
     %}
@@ -9,7 +10,7 @@ function test_ook(bin)
     fc = 26
     Amax = 3
     %{
-    Exemple : Un symbole a une période de Ts = 0.1s
+    Exemple : Un symbole binaire a une période de Ts = 0.1s
     La fréquence d'échantillonnage de la porteuse est de 1000 Hz
     La fréquence de la porteuse est de fc = 26 Hz et son amplitude est 
     Amax = 3

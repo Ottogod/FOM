@@ -1,3 +1,4 @@
+%Q1)
 function TraceTI(f0, duree, Fs)
     t = 0:1/Fs:duree-1/Fs
     x = cos(2*pi*f0*t)

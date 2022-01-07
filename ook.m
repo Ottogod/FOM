@@ -1,3 +1,4 @@
+%Q3)
 function s = ook(bin, Ts, Fs, fc, Amax)
     nb_motifs = length(bin)
     duree = nb_motifs*Ts

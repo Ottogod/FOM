@@ -1,3 +1,4 @@
+%Q2)
 function X = rbin(n)
 X = randn(1,n)>=0
 end
