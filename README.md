@@ -8,7 +8,7 @@ La synchronisation entre l'émetteur et le récepteur est supposée parfaite. Fi
 ## Affichage et analyse spectrale
 1. Il n'y a rien à signaler dans cette question qui ne consiste qu'à implémenter un plot dans des fonctions.
 On notera que TraceTI prend en argument un vecteur des temps t et un signal x dépendant de t, et trace x(t). On a considéré que le vecteur des temps était déjà échantillonné selon une fréquence d'échantillonnage Fs.
-TraceFFT prend en argument également un vecteur des temps t et un  un signal x. On fait bien attention à utiliser fftshift et non pas fft pour centrer le spectre féquentiel en 0.
+TraceFFT prend en arguments également un vecteur des temps t et un  un signal x. On fait bien attention à utiliser fftshift et non pas fft pour centrer le spectre féquentiel en 0.
 
 ![](Graphes/Q1_Spectre_tempo.png)
 
