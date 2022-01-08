@@ -5,12 +5,10 @@ function TraceFFT(t, Fs, x)
     x = cos(2*pi*f0*t)
     %}
     n = length(x)
-    X = fft(x)
-    Y = fftshift(X)
-    fshift = (-n/2:n/2-1)*(Fs/n)
-    power = abs(Y).^2/n
+    Xf = fftshift(abs(fft(x))) 
+    f = (à:n-1)
     figure
-    plot(fshift, power, 'r') 
+    plot(t, Xf, 'r') 
     xlabel('f (Hz)')
     ylabel('X(f)')
     title('Spectre fréquentiel en amplitude')
