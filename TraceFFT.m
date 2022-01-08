@@ -1,9 +1,10 @@
 %Q1)
-function TraceFFT(t, Fs, x)
+function TraceFFT(t,  x)
     %{
     t = (0:nb_points-1)/Fs
     x = cos(2*pi*f0*t)
     %}
+    Fs = length(t)/((t(length(t)-t(1))))
     n = length(x)
     X = fft(x)
     Y = fftshift(X)
