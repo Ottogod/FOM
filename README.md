@@ -31,3 +31,8 @@ rbin(5) peut générer randn(5) =  2.67 -1.56 -2.3 1.57  2.34  qui sera transfor
 
     Figure 3 : Résultat d'une odulation OOK avec le message binaire transformée en signal rectangle bin(t) sur le subplot 1, la porteuse c(t) en sublot 2 et le signal modulé s(t) en subplot 3
 
+4.
+Modulation :
+Démodulation :
+Les avantages de la modulation DSSS sont une forte sécurité du signal modulé ainsi qu'une immunité au jamming (brouillage intentionnel du signal).En contrepartie la modulation DSSS peut être lente et elle nécessite que le générateur de pseudo-bruit génère des séquences à haute fréquence. 
+Cette modulation possède des applications en CDMA (accès multiple par répartition en code) qui est une norme de réseau permettant à plusieurs liaisons d'utiliser la même fréquence porteuse. Elle permet notamment un accès à un internet haut débit et est utilisée dans les systèmes GNSS.
