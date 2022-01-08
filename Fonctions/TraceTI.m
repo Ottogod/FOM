@@ -8,7 +8,6 @@ function TraceTI(t, x)
     plot(t,x, 'b') 
     xlabel('t (s)')
     ylabel('s(t)')
-    ylim([-1.5, 1.5])
     title("Spectre temporel") 
 end
 
