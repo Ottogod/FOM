@@ -1,6 +1,6 @@
 function test_DSSS(p)
     %p = rbin(n)
-    m = [1; 0; 1]
+    m = [1, 0, 1]
     Tb = 0.1
     Fs = 1000
     ns_m= length(m)
