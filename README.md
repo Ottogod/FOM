@@ -8,15 +8,15 @@ La synchronisation entre l'émetteur et le récepteur est supposée parfaite. Fi
 ## Affichage et analyse spectrale
 1. Il n'y a rien à signaler dans cette question qui ne consiste qu'à implémenter un plot dans des fonctions.
 On notera que TraceTI prend en argument un vecteur des temps t et un signal x dépendant de t, et trace x(t). On a considéré que le vecteur des temps était déjà échantillonné selon une fréquence d'échantillonnage Fs.
-TraceFFT prend en arguments également un vecteur des temps t et un  un signal x. On fait bien attention à utiliser fftshift et non pas fft pour centrer le spectre féquentiel en 0.
+TraceFFT prend en arguments également un vecteur des temps t et un  un signal x. On fait bien attention à utiliser fftshift et non pas fft pour centrer le spectre fréquentiel (on fait ici le choix de représenter la Densité Spectrale de Puissance) en 0.
 
 ![](Graphes/Q1_Spectre_tempo.png)
 
-    Figure 1 : Spectre temportel de cos(2*pi*200*t)
+    Figure 1 : Spectre temporel de cos(2*pi*200*t)
 
 ![](Graphes/Q1_Spectre_freq.png)
 
-    Figure 2 : Spectre fréqentiel en module de cos(2*pi*200*t)
+    Figure 2 : DSP de cos(2*pi*200*t)
     
 ## Message
 2. Nous souhaitons créer un message aléatoire contenant des bits binaires par le biais d'une fonction rbin(n), qui prend en argument le nombre de bits contenus. Avec randn, on génère un vecteur ligne de n colonnes de réels aléatoires suivant une loi normale. On transforme chaque nombre en booléen (0 ou 1) suivant s'ils sont positifs ou non. Par exemple:
@@ -29,15 +29,35 @@ rbin(5) peut générer randn(5) =  2.67 -1.56 -2.3 1.57  2.34  qui sera transfor
 
 ![](Graphes/Q3_Signal_OOK.png)
 
-    Figure 3 : Résultat d'une odulation OOK avec le message binaire transformée en signal rectangle bin(t) sur le subplot 1, la porteuse c(t) en sublot 2 et le signal modulé s(t) en subplot 3
+    Figure 3 : Résultat d'une modulation OOK avec le message binaire transformée en signal rectangle bin(t) sur le subplot 1, la porteuse c(t) en sublot 2 et le signal modulé s(t) en subplot 3
 
 
 4. La modulation DSSS (par étalement de bande passante) consiste à multiplier un signal message m(t) par un code pseudo-aléatoire p(t) possédant un plus grand "chip rate" (fréquence de chips ou de pulsations) que la fréquence des bits du message. Le signal modulé peut être écrit s(t) = m(t)*p(t).
 ![](Graphes/Q4_Modulation_DSSS.jpg)
 
         Figure 4 : Illustration de la modulation DSSS. Ici on notera qu'une période de bit Tb correspond à 5 périodes de chip Tc. 
-
+        
 Une technique de démodulation consiste à multiplier le signal modulé par le même code pseudo-aléatoire. En pratique, du bruit i(t) s'est ajouté à s(t) tel que s(t) = m(t)*p(t) + i(t).
 La démodulation produit le signal reçu r(t) = m(t) + i(t)*p(t), le 2e terme étant à l'évidence gênant. Mais plus le "chip rate" du pseudo code est élevé, plus la densité spectrale du bruit est étalée et de moins grande valeur, ce qui permet de distinguer clairement le message.
 Les avantages de la modulation DSSS sont une forte sécurité du signal modulé ainsi qu'une immunité au jamming (brouillage intentionnel du signal).En contrepartie la modulation DSSS peut être lente et elle nécessite que le générateur de pseudo-bruit génère des séquences de haute fréquence. 
 Cette modulation possède des applications en CDMA (accès multiple par répartition en code) qui est une norme de réseau permettant à plusieurs liaisons d'utiliser la même fréquence porteuse. Elle permet notamment un accès à un internet haut débit et est utilisée dans les systèmes GNSS.
+On peut voir les spectres temporels et fréquentiels de la modulation sur les graphes ci-dessous :
+
+![](Graphes/Q4_DSSS.png)
+
+        Figure 5 : Comparaison entre le message m (1 0 1) de période 0.1, le code pseudo-aléatoire (0 1 1 0 1) de période 0.02  et le signal modulé s
+        
+![](Graphes/Q4_Spectre_freq_m.png)
+
+        Figure 6 : DSP du message m (1 0 1) de période 0.1
+        
+![](Graphes/Q4_Spectre_freq_s.png)
+
+        Figure 7 : DSP du signal s modulé à partir de m
+        
+ Cette modulation d'étalement de spectre porte bien son nom puisque le signal modulé occupe une plus large bande passante, tout en perdant en amplitude, donnant l'impression que le spectre "'s'aplatit".
+        
+
+
+
+
