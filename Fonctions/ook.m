@@ -8,7 +8,7 @@ function s = ook(bin, Ts, Fs, fc, Amax)
     j=1
     for i=1:nb_motifs
         t = (i-1)*Ts  
-           while T(j)>=t && T(j)<= t+Ts 
+           while T(j)<= t+Ts 
                 if bin(i)==1
                     s(1,j)=c(1,j)
                 end
