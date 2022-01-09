@@ -1,7 +1,7 @@
-%Q3)
+%Q3) TEST
 function test_ook(bin)
     %{
-    Cette fonction test ne prend en paramètre qu'un vecteur binaire bin
+    Cette fonction TEST ne prend en paramètre qu'un vecteur binaire bin
     déclaré avec bin = rbin(n), avec n le nombre de bits contenus. Par
     exemple on pourrait avoir rbin(5) = 1 0 0 1 1
     %}

@@ -1,5 +1,8 @@
+%Q4) TEST
+
 function test_DSSS(p)
-    %p = rbin(n)
+%Fonction TEST, ne prend en argument qu'un vecteur binaire (à priori le
+%code pseudo aléatoire). Ex : p = rbin(n)
     m = [1, 0, 1]
     Tb = 0.1
     Fs = 1000
