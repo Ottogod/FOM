@@ -14,7 +14,7 @@ TraceFFT prend en arguments également un vecteur des temps t et un  un signal x
 
     Figure 1 : Spectre temporel de cos(2*pi*200*t)
 
-
+![](Graphes/Q1_Spectre_freq.png)
 
     Figure 2 : DSP de cos(2*pi*200*t)
     
