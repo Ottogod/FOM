@@ -14,7 +14,7 @@ function TraceFFT(t,  x)
     plot(fshift, power, 'r') 
     xlabel('f (Hz)')
     ylabel('X(f)')
-    title('Spectre fréquentiel en amplitude')
+    title('DSP')
 
 end
 
