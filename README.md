@@ -62,11 +62,13 @@ On peut voir les spectres temporels et fréquentiels de la modulation sur les gr
  5. On modélise le canal de transmission idéal avec Bruit Additif Blanc Gaussien par une fonction channel prenant en argument un signal émis (à priori déjà modulé).
  La fonction channel renvoie en sortie ce signal auquel on ajoute un bruit blanc (par le biais d'awgn), et on notera ue l'on a choisi en première approche un SNR de 25dB qui témoigne d'un canal robuste au bruit et donc d'une bonne transmission, mais c'et un paramètre qu'il est possible de modifier.
  
- ![](Graphes/Q5_temporel.png)
+ ![](Graphes/Q5_temporel_bad.png)
  
-        Figure 8 : Les subplots de gauche sont les signaux émis (par modulation OOK en haut et DSSS en bas) et ceux de droite les signaux reçus après passage par le canal 
+        Figure 9 : Les subplots de gauche sont les signaux émis e(t) (par modulation OOK et DSSS) et ceux de droite les signaux reçus r(t) après passage par le canal (SNR = 10)
         
+![](Graphes/Q5_temporel.png)
 
+        Figure 10 : Même figure que la précédente mais avec SNR = 25
 
 
 
