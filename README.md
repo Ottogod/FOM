@@ -20,7 +20,7 @@ TraceFFT prend en arguments également un vecteur des temps t et un  un signal x
     
 ## Message
 2. Nous souhaitons créer un message aléatoire contenant des bits binaires par le biais d'une fonction rbin(n), qui prend en argument le nombre de bits contenus. Avec randn, on génère un vecteur ligne de n colonnes de réels aléatoires suivant une loi normale. On transforme chaque nombre en booléen (0 ou 1) suivant s'ils sont positifs ou non. Par exemple:
-rbin(5) peut générer randn(5) =  2.67 -1.56 -2.3 1.57  2.34  qui sera transformée en  1 0 0 1 1
+rbin(5) peut générer randn(5) =  2.67 -1.56 -2.3 1.57  2.34  qui sera transformé en  1 0 0 1 1
 
 ## Modulation
 3. 
