@@ -64,22 +64,22 @@ On peut voir les spectres temporels et fréquentiels de la modulation sur les gr
  
  ![](Graphes/Q5_temporel_bad.png)
  
-    Figure 9 : Les subplots de gauche sont les signaux émis e(t) (par modulation OOK et DSSS) et ceux de droite les signaux reçus r(t) après passage par le canal (SNR = 10 dB)
+    Figure 8 : Les subplots de gauche sont les signaux émis e(t) (par modulation OOK et DSSS) et ceux de droite les signaux reçus r(t) après passage par le canal (SNR = 10 dB)
         
 ![](Graphes/Q5_temporel.png)
 
-    Figure 10 : Même type de figure que la précédente mais avec SNR = 25 dB
+    Figure 9 : Même type de figure que la précédente mais avec SNR = 25 dB
         
  On voit bien comment un SNR de 25dB rend compte d'un signal moins bruité et donc d'une meilleure transmission qu'un SNR de 10dB. Bien sûr on pourra toujours interroger le réalisme de cette valeur, mais on prendra par convention un SNR de 25dB pour la suite de l'étude.
  On notera cependant que l'on aura plus de difficultés à remarquer (à l'oeil nu) des variations dues au bruit dans les spectres fréquentiels, et ce pour ces 2 valeurs de SNR.
  
  ![](Graphes/Q5_freq_ideal.png)
  
-    Figure 11 : DSP d'un signal émis idéal
+    Figure 10 : DSP d'un signal émis idéal
  
  ![](Graphes/Q5-freq_awgn.png)
  
-    Figure 12 : DSP du signal reçu après passage par la canal de transmission (SNR = 25 dB)
+    Figure 11 : DSP du signal reçu après passage par la canal de transmission (SNR = 25 dB)
 
 ## Démodulations
 
