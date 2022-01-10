@@ -50,7 +50,7 @@ On peut voir les spectres temporels et fréquentiels de la modulation sur les gr
         
 ![](Graphes/Q4_Spectre_freq_m.png)
 
-    Figure 6 : DSP du message m (1 0 1) de période 0.1
+    Figure 6 : DSP du message m (1 0 1) de période 0.1 s
         
 ![](Graphes/Q4_Spectre_freq_s.png)
 
