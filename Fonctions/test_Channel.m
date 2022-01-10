@@ -5,7 +5,7 @@ tot_duration = length(m)*Tb     %total duration of emitted signal
 Fs = 1000                       %sampling frequency
 t = 0 : 1/Fs : tot_duration - 1/Fs %time vector
 
-e_ook = binToSig(m, Tb, Fs)            %ook modulation emitted signal
+e_ook = ook(m, Tb, Fs, 35, 3)            %ook modulation emitted signal
 r_ook = channel(e_ook)  %received signal from ideal channel (ook modulated)
 
 e_dsss = DSSS(m, Tb, Fs, p)             %dsss modulation emitted signal
