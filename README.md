@@ -60,7 +60,7 @@ On peut voir les spectres temporels et fréquentiels de la modulation sur les gr
  ## Canal de transmission
  
  5. On modélise le canal de transmission idéal avec Bruit Additif Blanc Gaussien par une fonction channel prenant en argument un signal émis (à priori déjà modulé).
- La fonction channel renvoie en sortie ce signal auquel on ajoute un bruit blanc (par le biais d'awgn), et on notera que l'on a choisi en première approche un SNR de 25dB, qui caractériserait un canal plutôt robuste au bruit.
+ La fonction channel renvoie en sortie ce signal auquel on ajoute un bruit blanc (par le biais d'awgn).On a choisi en première approche un SNR de 25dB, qui caractériserait un canal plutôt robuste au bruit, mais qui est purement arbitraire.
  
  ![](Graphes/Q5_temporel_bad.png)
  
@@ -68,7 +68,7 @@ On peut voir les spectres temporels et fréquentiels de la modulation sur les gr
         
 ![](Graphes/Q5_temporel.png)
 
-        Figure 10 : Même figure que la précédente mais avec SNR = 25 dB
+        Figure 10 : Même type de figure que la précédente mais avec SNR = 25 dB
         
  On voit bien comment un SNR de 25dB rend compte d'un signal moins bruité et donc d'une meilleure transmission qu'un SNR de 10dB. Bien sûr on pourra toujours interroger le réalisme de cette valeur, mais on prendra par convention un SNR de 25dB pour la suite de l'étude.
  On notera cependant que l'on aura plus de difficultés à remarquer (à l'oeil nu) des variations dues au bruit dans les spectres fréquentiels, et ce pour ces 2 valeurs de SNR.
