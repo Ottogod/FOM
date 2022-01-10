@@ -40,19 +40,19 @@ title('r dsss(t) (awgn added)')
 
 TraceFFT(t, e_ook)
 ylabel('E ook(f)')
-title('DSP of E ook (ideal)')
+title('DSP de E ook (idéal)')
 
 TraceFFT(t, r_ook)
 ylabel('R ook(f)')
-title('DSP of R ook (awgn added)')
+title('DSP de R ook (awgn)')
 
 TraceFFT(t, e_dsss)
 ylabel('E dsss(f)')
-title('DSP of E dsss (ideal)')
+title('DSP de E dsss (idéal)')
 
 TraceFFT(t, r_dsss)
 ylabel('R dsss(f)')
-title('DSP of R dsss (awgn added)')
+title('DSP de R dsss (awgn)')
 
 
 
