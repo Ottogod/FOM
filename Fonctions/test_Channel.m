@@ -1,5 +1,5 @@
-m = [1 0 1 0 1]             %Binary message
-p = rbin(10)        %pseudo random sequence of 10 chips
+m = [1 0 1 0]             %Binary message
+p = rbin(8)        %pseudo random sequence of 10 chips
 Tb = 0.1        %Duration of m's binary symbols
 tot_duration = length(m)*Tb     %total duration of emitted signal
 Fs = 1000                       %sampling frequency
@@ -9,24 +9,53 @@ e_ook = binToSig(m, Tb, Fs)            %ook modulation emitted signal
 r_ook = channel(e_ook)  %received signal from ideal channel (ook modulated)
 
 e_dsss = DSSS(m, Tb, Fs, p)             %dsss modulation emitted signal
-r_DSSS = channel(e_dsss)  %received signal from channel (dsss modulated)
+r_dsss = channel(e_dsss)  %received signal from channel (dsss modulated)
 
 figure
-subplot(2,1,1)
-plot(t, e_ook)
-plot(t, r_ook)
-xabel('t')
-ylabel('r_ook(t)')
-title('r_ook(t)')
-legend('e_ook (ideal)', 'r_ook (awgn added)')
+grid on 
 
-subplot(2,1,2)
+subplot(2,2,1)
+plot(t, e_ook)
+xlabel('t')
+ylabel('e ook(t)')
+title('e ook(t) (ideal)')
+
+subplot(2,2,2)
+plot(t, r_ook)
+xlabel('t')
+ylabel('r ook(t)')
+title('r ook(t) (awgn added)')
+
+subplot(2,2,3)
 plot(t, e_dsss)
+xlabel('t')
+ylabel('e dsss(t)')
+title('e dsss(t) (ideal)')
+
+subplot(2,2,4)
 plot(t, r_dsss)
-xabel('t')
-ylabel('r_dsss(t)')
-title('r_dsss(t)')
-legend('e_dsss (ideal)', 'r_dsss (awgn added)')
+xlabel('t')
+ylabel('r dsss(t)')
+title('r dsss(t) (awgn added)')
+
+TraceFFT(t, e_ook)
+ylabel('E ook(f)')
+title('DSP of E ook (ideal)')
+
+TraceFFT(t, r_ook)
+ylabel('R ook(f)')
+title('DSP of R ook (awgn added)')
+
+TraceFFT(t, e_dsss)
+ylabel('E dsss(f)')
+title('DSP of E dsss (ideal)')
+
+TraceFFT(t, r_dsss)
+ylabel('R dsss(f)')
+title('DSP of R dsss (awgn added)')
+
+
+
 
 
 
