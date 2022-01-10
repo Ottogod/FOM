@@ -35,7 +35,7 @@ rbin(5) peut générer randn(5) =  2.67 -1.56 -2.3 1.57  2.34  qui sera transfor
 4. La modulation DSSS (par étalement de bande passante) consiste à multiplier un signal message m(t) par un code pseudo-aléatoire p(t) possédant un plus grand "chip rate" (fréquence de chips ou de pulsations) que la fréquence des bits du message. Le signal modulé peut être écrit s(t) = m(t)*p(t).
 ![](Graphes/Q4_Modulation_DSSS.jpg)
 
-        Figure 4 : Illustration de la modulation DSSS. Ici on notera qu'une période de bit Tb correspond à 5 périodes de chip Tc. 
+    Figure 4 : Illustration de la modulation DSSS. Ici on notera qu'une période de bit Tb correspond à 5 périodes de chip Tc. 
         
 Une technique de démodulation consiste à multiplier le signal modulé par le même code pseudo-aléatoire. En pratique, du bruit i(t) s'est ajouté à s(t) tel que s(t) = m(t)*p(t) + i(t).
 La démodulation produit le signal reçu r(t) = m(t) + i(t)*p(t), le 2e terme étant à l'évidence gênant. Mais plus le "chip rate" du pseudo code est élevé, plus la densité spectrale du bruit est étalée et de moins grande valeur, ce qui permet de distinguer clairement le message.
@@ -45,15 +45,15 @@ On peut voir les spectres temporels et fréquentiels de la modulation sur les gr
 
 ![](Graphes/Q4_DSSS.png)
 
-        Figure 5 : Comparaison entre le message m (1 0 1) de période 0.1, le code pseudo-aléatoire (0 1 1 0 1) de période 0.02  et le signal modulé s
+    Figure 5 : Comparaison entre le message m (1 0 1) de période 0.1, le code pseudo-aléatoire (0 1 1 0 1) de période 0.02  et le signal modulé s
         
 ![](Graphes/Q4_Spectre_freq_m.png)
 
-        Figure 6 : DSP du message m (1 0 1) de période 0.1
+    Figure 6 : DSP du message m (1 0 1) de période 0.1
         
 ![](Graphes/Q4_Spectre_freq_s.png)
 
-        Figure 7 : DSP du signal s modulé à partir de m
+    Figure 7 : DSP du signal s modulé à partir de m
         
  Cette modulation d'étalement de spectre porte bien son nom puisque le signal modulé occupe une plus large bande passante, tout en perdant en amplitude, donnant l'impression que le spectre "'s'aplatit".
  
@@ -64,22 +64,22 @@ On peut voir les spectres temporels et fréquentiels de la modulation sur les gr
  
  ![](Graphes/Q5_temporel_bad.png)
  
-        Figure 9 : Les subplots de gauche sont les signaux émis e(t) (par modulation OOK et DSSS) et ceux de droite les signaux reçus r(t) après passage par le canal (SNR = 10 dB)
+    Figure 9 : Les subplots de gauche sont les signaux émis e(t) (par modulation OOK et DSSS) et ceux de droite les signaux reçus r(t) après passage par le canal (SNR = 10 dB)
         
 ![](Graphes/Q5_temporel.png)
 
-        Figure 10 : Même type de figure que la précédente mais avec SNR = 25 dB
+    Figure 10 : Même type de figure que la précédente mais avec SNR = 25 dB
         
  On voit bien comment un SNR de 25dB rend compte d'un signal moins bruité et donc d'une meilleure transmission qu'un SNR de 10dB. Bien sûr on pourra toujours interroger le réalisme de cette valeur, mais on prendra par convention un SNR de 25dB pour la suite de l'étude.
  On notera cependant que l'on aura plus de difficultés à remarquer (à l'oeil nu) des variations dues au bruit dans les spectres fréquentiels, et ce pour ces 2 valeurs de SNR.
  
  ![](Graphes/Q5_freq_ideal.png)
  
-        Figure 11 : DSP d'un signal émis idéal
+    Figure 11 : DSP d'un signal émis idéal
  
  ![](Graphes/Q5-freq_awgn.png)
  
-        Figure 12 : DSP du signal reçu après passage par la canal de transmission (SNR = 25 dB)
+    Figure 12 : DSP du signal reçu après passage par la canal de transmission (SNR = 25 dB)
 
 ## Démodulations
 
