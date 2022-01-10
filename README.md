@@ -7,7 +7,7 @@ La synchronisation entre l'émetteur et le récepteur est supposée parfaite. Fi
 
 ## Affichage et analyse spectrale
 1. Il n'y a rien à signaler dans cette question qui ne consiste qu'à implémenter un plot dans des fonctions.
-On notera que TraceTI prend en argument un vecteur des temps t et un signal x dépendant de t, et trace x(t). On a considéré que le vecteur des temps était déjà échantillonné selon une fréquence d'échantillonnage Fs.
+On notera que TraceTI prend en arguments un vecteur des temps t et un signal x dépendant de t, et trace x(t). On a considéré que le vecteur des temps était déjà échantillonné selon une fréquence d'échantillonnage Fs.
 TraceFFT prend en arguments également un vecteur des temps t et un  un signal x. On fait bien attention à utiliser fftshift et non pas fft pour centrer le spectre fréquentiel (on fait ici le choix de représenter la Densité Spectrale de Puissance) en 0.
 
 ![](Graphes/Q1_Spectre_tempo.png)
@@ -59,8 +59,8 @@ On peut voir les spectres temporels et fréquentiels de la modulation sur les gr
  
  ## Canal de transmission
  
- 5. On modélise le canal de transmission idéal avec Bruit Additif Blanc Gaussien par une fonction channel prenant en argument un signal émis (à priori déjà modulé).
- La fonction channel renvoie en sortie ce signal auquel on ajoute un bruit blanc (par le biais d'awgn).On a choisi en première approche un SNR de 25dB, qui caractériserait un canal plutôt robuste au bruit, mais qui est purement arbitraire.
+ 5. On modélise le canal de transmission idéal avec Bruit Blanc Gaussien Additif par une fonction channel prenant en argument un signal émis (à priori déjà modulé).
+ La fonction channel renvoie en sortie ce signal auquel on ajoute un bruit blanc par le biais d'awgn.On a choisi en première approche un SNR de 25dB, qui caractériserait un canal plutôt robuste au bruit, mais qui est purement arbitraire.
  
  ![](Graphes/Q5_temporel_bad.png)
  
