@@ -9,29 +9,11 @@ function s = DSSS_BPSK(m, Tb, fc, Amax, p, Fs)
     ns_p = length(p)
     Tc = Tb/ns_p
     Time = 0:1/Fs:tot_duration- 1/Fs
-    m_ = ones(length(Time),1)'
+    m_ = BPSK(m, Tb, fc, Amax, Fs)
     np = repmat(p, 1, ns_m)
     p_ = ones(length(Time),1)'
     j=1
-    for i=1:ns_m
-        t = (i-1)*Tb  
-           while Time(j)<= t+Tb+1e-6  
-                if m(i)==0
-                    m_(j)=Amax*cos(2*pi*fc*Time(j))
-                end
-                if m(i)==1
-                    m_(j)=Amax*cos(2*pi*fc*Time(j) + pi)
-                end
-                if j== length(Time)
-                    j = 1
-                    break 
-                end
-                if j< length(Time)
-                    j=j+1
-                end
-                
-           end
-    end
+    
     for i=1:length(np)
         t = (i-1)*Tc
            while Time(j)<= t+Tc+ 1e-6
@@ -48,8 +30,5 @@ function s = DSSS_BPSK(m, Tb, fc, Amax, p, Fs)
                 
            end
     end
-
-    
-
     s = m_.*p_
 end 

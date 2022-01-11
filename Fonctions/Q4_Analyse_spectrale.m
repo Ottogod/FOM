@@ -1,38 +1,15 @@
 %Analyse spectrale Q4, script test
 
 m = [1, 0, 1]
+fc = 100
+Amax = 4
 Tb = 0.1
 Fs = 1000
 p = [1, 0, 1, 0, 1]
-s = DSSS(m, Tb, Fs, p)
+s1 = BPSK(m, Tb, fc, Amax, Fs)
+s2 = DSSS_BPSK(m, Tb, fc, Amax, p, Fs)
 
-ns_m= length(m)
-tot_duration = ns_m*Tb
-Time = 0:1/Fs:tot_duration-1/Fs
-m_ = ones(length(Time),1)'
-
-j=1
-for i=1:ns_m
-   t = (i-1)*Tb  
-   while Time(j)<= t+Tb + 1e-6
-        if m(i)==0
-             m_(j)=-1
-        end
-        if j== length(Time)
-             j = 1
-             break 
-        end
-        if j< length(Time)
-             j=j+1
-        end
-                
-   end
- end
-
-s = DSSS(m, Tb, Fs, p)
-
-
-TraceFFT(Time, m_)
-title("Spectre fréquentiel de m")
-TraceFFT(Time, s)
-title("Spectre fréquentiel de s")
+TraceFFT(Time, s1)
+title("Spectre fréquentiel de s1 modulé par BPSK à partir de m [1 0 1]")
+TraceFFT(Time, s2)
+title("Spectre fréquentiel de s2 modulé par DSSS à partir de s1")

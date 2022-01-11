@@ -60,19 +60,19 @@ p = rbin(5)
     ylabel("m(t)")
     title("m(t)")
 
-    subplot(2,2,3);
-    plot(Time, c);
-    grid on;
-    xlabel("t")
-    ylabel("c(t)")
-    title("c(t)")
-
     subplot(2,2,2);
     plot(Time, p_);
     grid on;
     xlabel("t")
     ylabel("p(t)")
     title("p(t)")
+
+    subplot(2,2,3);
+    plot(Time, c);
+    grid on;
+    xlabel("t")
+    ylabel("c(t)")
+    title("c(t)")
 
     subplot(2,2,4);
     plot(Time,s);
