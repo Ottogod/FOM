@@ -57,7 +57,7 @@ On peut voir les spectres temporels et fréquentiels de la modulation sur les gr
 
     Figure 7 : DSP de s2 = DSSS(s1, p = (1 0 1 0 1))
         
- Cette modulation d'étalement de spectre porte bien son nom puisque le signal modulé occupe une plus large bande passante, tout en perdant en amplitude, donnant l'impression que le spectre "'s'aplatit".
+ Cette modulation d'étalement de spectre porte bien son nom puisque le signal modulé occupe une plus large bande passante, tout en donnant l'impression que le spectre "'s'aplatit".
  
  ## Canal de transmission
  
