@@ -36,8 +36,9 @@ rbin(5) peut générer randn(5) =  2.67 -1.56 -2.3 1.57  2.34  qui sera transfor
 5. 
 ![](Graphes/Q4_Modulation_DSSS.jpg)
 
-    Figure 4 : Illustration de la modulation DSSS. Ici on notera qu'une période de bit Tb correspond à 5 périodes de chip Tc. 
-        
+    Figure 4 : Illustration d'un exemple de modulation DSSS. Ici on notera qu'une période de bit Tb correspond à 5 périodes de chip Tc. 
+
+Dans le cadre de notre étude, on effectue déjà une modulation BPSK sur le message binaire, et c'est sur ce signal que l'on réalise une deuxième modulation DSSS (soit le schéma : message binaire -> Modulation BPSK par une porteuse c -> Modulation DSSS par pseudo-bruit p).
 Une technique de démodulation consiste à multiplier le signal modulé par le même code pseudo-aléatoire. En pratique, du bruit i(t) s'est ajouté à s(t) tel que s(t) = m(t)*p(t) + i(t).
 La démodulation produit le signal reçu r(t) = m(t) + i(t)*p(t), le 2e terme étant à l'évidence gênant. Mais plus le "chip rate" du pseudo code est élevé, plus la densité spectrale du bruit est étalée et de moins grande valeur, ce qui permet de distinguer clairement le message.
 Les avantages de la modulation DSSS sont une forte sécurité du signal modulé ainsi qu'une immunité au jamming (brouillage intentionnel du signal). En contrepartie la modulation DSSS peut être lente et elle nécessite que le générateur de pseudo-bruit génère des séquences de haute fréquence. 
@@ -46,15 +47,15 @@ On peut voir les spectres temporels et fréquentiels de la modulation sur les gr
 
 ![](Graphes/Q4_DSSS.png)
 
-    Figure 5 : Comparaison entre le message m (1 0 1) de période 0.1, le code pseudo-aléatoire (0 1 1 0 1) de période 0.02  et le signal modulé s
+    Figure 5 : En haut à gauche le message binaire (1 0 1), en haut à droite le pseudo-bruit répliqué (1 0 0 0 1 ...), en bas à gauche la porteuse, en bas à droite le résultat de la modulation (BPSK + DSSS)
         
 ![](Graphes/Q4_Spectre_freq_m.png)
 
-    Figure 6 : DSP du message m (1 0 1) de période 0.1 s
+    Figure 6 : DSP de s1 = BPSK(m = (1 0 1), Tb = 0.1, fc = 100 , Amax = 2, Fs = 1000)
         
 ![](Graphes/Q4_Spectre_freq_s.png)
 
-    Figure 7 : DSP du signal s modulé à partir de m
+    Figure 7 : DSP de s2 = DSSS(s1, p = (1 0 1 0 1))
         
  Cette modulation d'étalement de spectre porte bien son nom puisque le signal modulé occupe une plus large bande passante, tout en perdant en amplitude, donnant l'impression que le spectre "'s'aplatit".
  
