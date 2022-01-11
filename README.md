@@ -47,7 +47,7 @@ On peut voir les spectres temporels et fréquentiels de la modulation sur les gr
 
 ![](Graphes/Q4_DSSS.png)
 
-    Figure 5 : En haut à gauche le message binaire (1 0 1), en haut à droite le pseudo-bruit répliqué (), en bas à gauche la porteuse, en bas à droite le résultat de la modulation (BPSK + DSSS)
+    Figure 5 : En haut à gauche le message binaire (1 0 1), en haut à droite le pseudo-bruit répliqué (1 0 0 0 1 ...), en bas à gauche la porteuse, en bas à droite le résultat de la modulation (BPSK + DSSS)
         
 ![](Graphes/Q4_Spectre_freq_m.png)
 
