@@ -24,9 +24,7 @@ function s = DSSS_BPSK(m, Tb, fc, Amax, p, Fs)
                     j = 1
                     break 
                 end
-                if j< length(Time)
-                    j=j+1
-                end
+                j = j+1
                 
            end
     end
