@@ -21,12 +21,12 @@ subplot(1, 4, 1)
 plot(t, m)
 xlabel('t (s)')
 ylabel('amplitude (V)')
-title('Information to be tranmitted')
+title('Information to be transmitted')
 
 % ---------------Coeficient for modulation and transmission----------------
 
 Amax = 2;       % Amplitude of carrier signal
-Fc = 35;        % Frequency of the carrier
+Fc = 25;        % Frequency of the carrier
 
 SNR = 10;        % SNR
 
@@ -50,7 +50,7 @@ xlabel('t (s)')
 ylabel('amplitude (V)')
 title('Emitted signal (OOK modulation)')
 
-% ------------------------DSSS emited signal-------------------------------
+% ------------------------DSSS emitted signal-------------------------------
 
 e_dsss = m_dsss;        % Emitted signal (DSSS)
 
@@ -104,7 +104,7 @@ xlabel('t (s)')
 ylabel('amplitude (V)')
 title('Demodulated signal (DSSS modulation)')
 
-% ---------Figure of the differents signals in frequency domain-----------
+% ---------Figure of the different signals in frequency domain-----------
 
 figure;
 
@@ -123,3 +123,18 @@ title('Received signal (OOK modulation)')
 subplot(2, 2, 4)
 TraceFFT(t, r_dsss)
 title('Received signal (DSSS modulation)')
+
+%-----------Printing Bit Error Rates -----------------------------------
+fprintf("Transmitted message :  [")
+fprintf("%g", m_bin(1:end-1))
+fprintf("] \n")
+fprintf("Received message via OOK :  [")
+fprintf("%g", s_bin_ook(1:end-1))
+fprintf("] \n")
+fprintf("Received message via DSSS :  [")
+fprintf("%g", m_bin(1:end-1))
+fprintf("] \n")
+
+fprintf("OOK demodulation's Bit Error Rate = %d \n", ber_ook)
+fprintf("DSSS demodulation's Bit Error Rate = %d \n", ber_dsss)
+
