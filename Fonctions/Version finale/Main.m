@@ -21,7 +21,7 @@ subplot(1, 4, 1)
 plot(t, m)
 xlabel('t (s)')
 ylabel('amplitude (V)')
-title('Inforation to be tranmitted')
+title('Information to be tranmitted')
 
 % ---------------Coeficient for modulation and transmission----------------
 
@@ -48,7 +48,7 @@ subplot(2, 4, 2)
 plot(t, e_ook)
 xlabel('t (s)')
 ylabel('amplitude (V)')
-title('Emited signal (OOK modulation)')
+title('Emitted signal (OOK modulation)')
 
 % ------------------------DSSS emited signal-------------------------------
 
@@ -58,7 +58,7 @@ subplot(2, 4, 6)
 plot(t, e_dsss)
 xlabel('t (s)')
 ylabel('amplitude (V)')
-title('Emited signal (DSSS modulation)')
+title('Emitted signal (DSSS modulation)')
 
 % ------------------------OOK received signal------------------------------
 
@@ -68,7 +68,7 @@ subplot(2, 4, 3)
 plot(t, r_ook)
 xlabel('t (s)')
 ylabel('amplitude (V)')
-title('Recieved signal (OOK modulation)')
+title('Received signal (OOK modulation)')
 
 
 % -----------------------DSSS received signal------------------------------
@@ -79,7 +79,7 @@ subplot(2, 4, 7)
 plot(t, r_dsss)
 xlabel('t (s)')
 ylabel('amplitude (V)')
-title('Recieved signal (DSSS modulation)')
+title('Received signal (DSSS modulation)')
 
 % -------------------------OOK demodulation--------------------------------
 
@@ -110,16 +110,16 @@ figure;
 
 subplot(2, 2, 1)
 TraceFFT(t, e_ook)
-title('Emited signal (OOK modulation)')
+title('Emitted signal (OOK modulation)')
 
 subplot(2, 2, 2)
 TraceFFT(t, e_dsss)
-title('Emited signal (DSSS modulation)')
+title('Emitted signal (DSSS modulation)')
 
 subplot(2, 2, 3)
 TraceFFT(t, r_ook)
-title('Recieved signal (OOK modulation)')
+title('Received signal (OOK modulation)')
 
 subplot(2, 2, 4)
 TraceFFT(t, r_dsss)
-title('Recieved signal (DSSS modulation)')
+title('Received signal (DSSS modulation)')
