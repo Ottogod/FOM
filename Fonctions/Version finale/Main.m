@@ -40,9 +40,9 @@ p = rbin(8);    % Pseudo random sequence of 8 bits
 
 m_dsss = DSSS_BPSK(m_bin, p, Amax, Fc, Fs, Tb);     % Modulated signal (DSSS)
 
-% -------------------------OOK emited signal-------------------------------
+% -------------------------OOK emitted signal-------------------------------
 
-e_ook = m_ook;      % Emited signal (OOK)
+e_ook = m_ook;      % Emitted signal (OOK)
 
 subplot(2, 4, 2)
 plot(t, e_ook)
@@ -52,7 +52,7 @@ title('Emitted signal (OOK modulation)')
 
 % ------------------------DSSS emited signal-------------------------------
 
-e_dsss = m_dsss;        % Emited signal (DSSS)
+e_dsss = m_dsss;        % Emitted signal (DSSS)
 
 subplot(2, 4, 6)
 plot(t, e_dsss)
@@ -104,7 +104,7 @@ xlabel('t (s)')
 ylabel('amplitude (V)')
 title('Demodulated signal (DSSS modulation)')
 
-% ---------Figure of the differents signals in frequency domaine-----------
+% ---------Figure of the differents signals in frequency domain-----------
 
 figure;
 
