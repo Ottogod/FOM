@@ -13,6 +13,7 @@ function s = DSSS_BPSK(m, Tb, fc, Amax, p, Fs)
     np = repmat(p, 1, ns_m)
     p_ = ones(length(Time),1)'
     j=1
+    m_ = BPSK(m,Tb, fc, Amax, Fs)
     
     for i=1:length(np)
         t = (i-1)*Tc
@@ -28,5 +29,5 @@ function s = DSSS_BPSK(m, Tb, fc, Amax, p, Fs)
                 
            end
     end
-    s = m_.*p_
+    s = p_.*m_
 end 

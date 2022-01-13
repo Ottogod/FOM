@@ -1,5 +1,5 @@
 m = [1, 0, 1]
-p = rbin(5)
+p = rbin(3)
     Tb = 0.1
     Fs = 1000
     ns_m= length(m)
@@ -8,7 +8,7 @@ p = rbin(5)
     Tc = Tb/ns_p
     Time = 0:1/Fs:tot_duration-1/Fs
     Amax = 3
-    fc = 30
+    fc = 9/0.3
     m_ = ones(length(Time),1)'
     np = repmat(p, 1, ns_m)
     p_ = ones(length(Time),1)'
