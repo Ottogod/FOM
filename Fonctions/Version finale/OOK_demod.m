@@ -31,12 +31,8 @@ function [s, s_bin] = OOK_demod(r, Amax, Fc, Fs, Tb)
   
     s = zeros(1, length(t));
 
-    for i = 1:length(s1)
-        if s1(i) < av
-            s(i) = 0;
-        else
-            s(i) = 1;
-        end
+    for i=1:n_bit_m
+        s(((i-1)*Fs*Tb+1):((i)*Fs*Tb)) = mean(s1(((i-1)*Fs*Tb+1):((i)*Fs*Tb))) > av;
     end
 
     s_bin = zeros(1, n_bit_m);
