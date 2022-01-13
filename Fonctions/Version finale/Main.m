@@ -1,4 +1,6 @@
 % Question 8
+%
+% Ce fichier traite un message binaire et simule une chaine de transmission
 
 clc, clear all, close all;
 
@@ -9,7 +11,7 @@ m_bin = [1 0 1 0 0 1 1 0];
 Tb = 0.1;       % Duration of m_bin's binary symbols
 Fs = 1000;      % Sampling frequency
 
-m = binToSig(m_bin, Fs, Tb);
+m = binToSig(m_bin, Fs, Tb);        % Signal corresponding to the binary information
 
 tot_duration = length(m_bin)*Tb;        % Total duration of emitted signal
 t = 0 : 1/Fs : tot_duration - 1/Fs;     % Time vector
@@ -26,21 +28,21 @@ title('Inforation to be tranmitted')
 Amax = 2;       % Amplitude of carrier signal
 Fc = 35;        % Frequency of the carrier
 
-SNR = 0.001;
+SNR = 10;        % SNR
 
 % ---------------------------OOK modulation--------------------------------
 
-m_ook = OOK(m_bin, Amax, Fc, Fs, Tb);
+m_ook = OOK(m_bin, Amax, Fc, Fs, Tb);       % Modulated signal (OOK)
 
 % --------------------------DSSS modulation--------------------------------
 
 p = rbin(8);    % Pseudo random sequence of 8 bits
 
-m_dsss = DSSS_BPSK(m_bin, p, Amax, Fc, Fs, Tb);        
+m_dsss = DSSS_BPSK(m_bin, p, Amax, Fc, Fs, Tb);     % Modulated signal (DSSS)
 
 % -------------------------OOK emited signal-------------------------------
 
-e_ook = m_ook;
+e_ook = m_ook;      % Emited signal (OOK)
 
 subplot(2, 4, 2)
 plot(t, e_ook)
@@ -50,7 +52,7 @@ title('Emited signal (OOK modulation)')
 
 % ------------------------DSSS emited signal-------------------------------
 
-e_dsss = m_dsss;
+e_dsss = m_dsss;        % Emited signal (DSSS)
 
 subplot(2, 4, 6)
 plot(t, e_dsss)
@@ -60,7 +62,7 @@ title('Emited signal (DSSS modulation)')
 
 % ------------------------OOK received signal------------------------------
 
-r_ook = channel(e_ook, SNR);
+r_ook = channel(e_ook, SNR);        % Received signal (OOK)
 
 subplot(2, 4, 3)
 plot(t, r_ook)
@@ -71,7 +73,7 @@ title('Recieved signal (OOK modulation)')
 
 % -----------------------DSSS received signal------------------------------
 
-r_dsss = channel(e_dsss, SNR);
+r_dsss = channel(e_dsss, SNR);      % Received signal (DSSS)
 
 subplot(2, 4, 7)
 plot(t, r_dsss)
@@ -81,8 +83,8 @@ title('Recieved signal (DSSS modulation)')
 
 % -------------------------OOK demodulation--------------------------------
 
-[s_ook, s_bin_ook] = OOK_demod(r_ook, Amax, Fc, Fs, Tb);
-ber_ook = ber(m_bin, s_bin_ook);
+[s_ook, s_bin_ook] = OOK_demod(r_ook, Amax, Fc, Fs, Tb);        % Demodulated signal an bits sequence (OOK)
+ber_ook = ber(m_bin, s_bin_ook);        % BER for OOK modulation
 
 subplot(2, 4, 4)
 plot(t, s_ook)
@@ -93,8 +95,8 @@ title('Demodulated signal (OOK modulation)')
 
 % ------------------------DSSS demodulation--------------------------------
 
-[s_dsss, s_bin_dsss] = DSSS_BPSK_demod(r_dsss, p, Amax, Fc, Fs, Tb);
-ber_dsss = ber(m_bin, s_bin_dsss);
+[s_dsss, s_bin_dsss] = DSSS_BPSK_demod(r_dsss, p, Amax, Fc, Fs, Tb);        % Demodulated signal an bits sequence (DSSS)
+ber_dsss = ber(m_bin, s_bin_dsss);      % Ber for DSSS modulation
 
 subplot(2, 4, 8)
 plot(t, s_dsss)

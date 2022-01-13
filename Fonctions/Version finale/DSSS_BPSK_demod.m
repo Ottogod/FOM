@@ -1,37 +1,37 @@
 % Question 6
+%
+% Fonction effectuant une démodulation pour un signal ayant été modulé
+% par une modulation de type DSSS
+% 
+% Paramètres
+% r : signal à démoduler
+% p_bin : tableau de bits pseudo-aléatoires
+% Amax : amplitude de la porteuse
+% Fc : fréquence de la porteuse
+% Fs : fréquence d'échntillonnage
+% Tb : durée d'émission d'un bit
+% 
+% Retour
+% s : signal démodulé
+% s_bin : tableau de bits correspondant au signal démodulé
 
 function [s, s_bin] = DSSS_BPSK_demod(r, p_bin, Amax, Fc, Fs, Tb)
-    %{
-    Fonction effectuant une démodulation pour un signal ayant été modulé
-    par une modulation de type DSSS
 
-    Paramètres
-    r : signal à démoduler
-    p_bin : tableau de bits pseudo-aléatoires
-    Amax : amplitude de la porteuse
-    Fc : fréquence de la porteuse
-    Fs : fréquence d'échntillonnage
-    Tb : durée d'émission d'un bit
-    
-    Retour
-    s : signal démodulé
-    s_bin : tableau de bits correspondant au signal démodulé
-    %}
 
-    tot_duration = length(r)/Fs;
-    t = 0 : 1/Fs : tot_duration - 1/Fs;
+    tot_duration = length(r)/Fs;        % Total duration of signal
+    t = 0 : 1/Fs : tot_duration - 1/Fs;     % Time vector
 
-    n_bit_m = tot_duration/Tb;
-    n_bit_p = length(p_bin);
-    Tp = Tb/n_bit_p;
+    n_bit_m = tot_duration/Tb;      % Number of bits in m_bin
+    n_bit_p = length(p_bin);        % Number of bits in p_bin
+    Tp = Tb/n_bit_p;        % Duration of p_bin's binary symbols
     
     p_bin_extanded = repmat(p_bin, 1, n_bit_m);
-    p = binToSig(p_bin_extanded, Fs, Tp);
+    p = binToSig(p_bin_extanded, Fs, Tp);       % Signal corresponding to the pseudo-random code
     
-    c = -Amax*cos(2*pi*Fc*t);
+    c = -Amax*cos(2*pi*Fc*t);       % Carrier
 
-    s1 = r.*p;
-    s2 = s1.*c;
+    s1 = r.*p;      % We multiply the signal by the signal corresponding to the pseudo random code
+    s2 = s1.*c;     % We multiply the obtained signal by the carrier to obtain the demodulated signal
 
     s = zeros(1, length(t));
 
@@ -44,4 +44,3 @@ function [s, s_bin] = DSSS_BPSK_demod(r, p_bin, Amax, Fc, Fs, Tb)
         s_bin(i) = s((i-1)*Fs*Tb+Fs*Tb/2) > 0;
     end
 end
-
