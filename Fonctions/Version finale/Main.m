@@ -6,10 +6,10 @@ clc, clear all, close all;
 
 % --------------Binary information and corresponding signal----------------
 
-m_bin = rbin(8);
+m_bin = rbin(5);
 
 Tb = 0.1;       % Duration of m_bin's binary symbols
-Fs = 1100;      % Sampling frequency
+Fs = 2*500;      % Sampling frequency (multiple of 2 and 10)
 
 m = binToSig(m_bin, Fs, Tb);        % Signal corresponding to the binary information
 
@@ -26,7 +26,7 @@ title('Information to be transmitted')
 % ---------------Coeficient for modulation and transmission----------------
 
 Amax = 2;       % Amplitude of carrier signal
-Fc = 35;        % Frequency of the carrier
+Fc = 50;        % Frequency of the carrier
 Fcr = Fc;        % Frequency of the carrier at receiver
 
 SNR = 10;        % SNR
@@ -37,7 +37,7 @@ m_ook = OOK(m_bin, Amax, Fc, Fs, Tb);       % Modulated signal (OOK)
 
 % --------------------------DSSS modulation--------------------------------
 
-p = rbin(8);    % Pseudo random sequence of 8 bits
+p = rbin(3);    % Pseudo random sequence of 8 bits
 
 m_dsss = DSSS_BPSK(m_bin, p, Amax, Fc, Fs, Tb);     % Modulated signal (DSSS)
 

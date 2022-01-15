@@ -4,19 +4,20 @@ clc, clear all, close all;
 
 % -------------- Parameters of channel ----------------
 
-M = 8           %characetrizes M-ary message
+M = 100      %characterizes M-ary message
 m_bin = rbin(M);
 
 Tb = 0.1;       % Duration of m_bin's binary symbols
-Fs = 2*500;      % Sampling frequency
+Fs = 1000;      % Sampling frequency
 
-Amax = 2;       % Amplitude of carrier signal
-Fc = 35;        % Frequency of the carrier
+Amax = 10;       % Amplitude of carrier signal
+Fc = 100 ;        % Frequency of the carrier
 Fcr = Fc;   %Frequency of the carrier at the receiver
 
 SNR = 10;        % SNR
 
 % ----------------------Transforming msg into signal -----------------
+
 tot_duration = length(m_bin)*Tb;        % Total duration of emitted signal
 t = 0 : 1/Fs : tot_duration - 1/Fs;     % Time vector
 m = binToSig(m_bin, Fs, Tb);        % Signal corresponding to the binary information
