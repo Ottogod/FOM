@@ -42,6 +42,6 @@ function [s, s_bin] = DSSS_BPSK_demod(r, p_bin, Amax, Fc, Fs, Tb)
 
     s_bin = zeros(1, n_bit_m);
     for i = 1:n_bit_m
-        s_bin(i) = s3((i-1)*Fs*Tb+Fs*Tb/2) > 0;
+        s_bin(i) = s3(floor((i-1)*Fs*Tb+Fs*Tb/2)) > 0;      %(we need that Tb*Fs/2 is an integer)
     end
 end
