@@ -6,7 +6,7 @@ clc, clear all, close all;
 
 % --------------Binary information and corresponding signal----------------
 
-m_bin = [1 0 1 0 0 1 1 0];
+m_bin = rbin(10);
 
 Tb = 0.1;       % Duration of m_bin's binary symbols
 Fs = 1000;      % Sampling frequency
@@ -26,7 +26,7 @@ title('Information to be transmitted')
 % ---------------Coeficient for modulation and transmission----------------
 
 Amax = 2;       % Amplitude of carrier signal
-Fc = 25;        % Frequency of the carrier
+Fc = 35;        % Frequency of the carrier
 
 SNR = 10;        % SNR
 
@@ -36,7 +36,7 @@ m_ook = OOK(m_bin, Amax, Fc, Fs, Tb);       % Modulated signal (OOK)
 
 % --------------------------DSSS modulation--------------------------------
 
-p = rbin(8);    % Pseudo random sequence of 8 bits
+p = rbin(20);    % Pseudo random sequence of 8 bits
 
 m_dsss = DSSS_BPSK(m_bin, p, Amax, Fc, Fs, Tb);     % Modulated signal (DSSS)
 
@@ -126,13 +126,13 @@ title('Received signal (DSSS modulation)')
 
 %-----------Printing Bit Error Rates -----------------------------------
 fprintf("Transmitted message :  [")
-fprintf("%g", m_bin(1:end-1))
+fprintf("%g", m_bin(1:end))
 fprintf("] \n")
 fprintf("Received message via OOK :  [")
-fprintf("%g", s_bin_ook(1:end-1))
+fprintf("%g", s_bin_ook(1:end))
 fprintf("] \n")
 fprintf("Received message via DSSS :  [")
-fprintf("%g", m_bin(1:end-1))
+fprintf("%g", s_bin_dsss(1:end))
 fprintf("] \n")
 
 fprintf("OOK demodulation's Bit Error Rate = %d \n", ber_ook)
