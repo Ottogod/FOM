@@ -16,7 +16,7 @@ function TraceFFT(t,  x)
     power = abs(Y).^2/n;
     plot(fshift, power, 'r') 
     xlabel('f (Hz)')
-    ylabel('X(f)')
+    ylabel('X(f) (DSP)')
     title('DSP')
 
 end

@@ -6,10 +6,10 @@ clc, clear all, close all;
 
 % --------------Binary information and corresponding signal----------------
 
-m_bin = rbin(10);
+m_bin = rbin(8);
 
 Tb = 0.1;       % Duration of m_bin's binary symbols
-Fs = 1000;      % Sampling frequency
+Fs = 1100;      % Sampling frequency
 
 m = binToSig(m_bin, Fs, Tb);        % Signal corresponding to the binary information
 
@@ -36,7 +36,7 @@ m_ook = OOK(m_bin, Amax, Fc, Fs, Tb);       % Modulated signal (OOK)
 
 % --------------------------DSSS modulation--------------------------------
 
-p = rbin(20);    % Pseudo random sequence of 8 bits
+p = rbin(8);    % Pseudo random sequence of 8 bits
 
 m_dsss = DSSS_BPSK(m_bin, p, Amax, Fc, Fs, Tb);     % Modulated signal (DSSS)
 
