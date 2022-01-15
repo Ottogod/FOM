@@ -7,11 +7,11 @@ clc, clear all, close all;
 M = 100      %characterizes M-ary message
 m_bin = rbin(M);
 
-Tb = 0.1;       % Duration of m_bin's binary symbols
-Fs = 2*500;      % Sampling frequency
+Tb = 0.01;       % Duration of m_bin's binary symbols
+Fs = 2*5000;      % Sampling frequency (such as Tb*Fs/2 is an integer)
 
 Amax = 10;       % Amplitude of carrier signal
-Fc = 100 ;        % Frequency of the carrier
+Fc = 1000 ;        % Frequency of the carrier
 Fcr = Fc;   %Frequency of the carrier at the receiver
 
 SNR = 10;        % SNR

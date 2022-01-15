@@ -9,7 +9,7 @@ clc, clear all, close all;
 m_bin = rbin(5);
 
 Tb = 0.1;       % Duration of m_bin's binary symbols
-Fs = 2*500;      % Sampling frequency (multiple of 2 and 10)
+Fs = 2*500;      % Sampling frequency (such as Tb*Fs/2 is an integer)
 
 m = binToSig(m_bin, Fs, Tb);        % Signal corresponding to the binary information
 
