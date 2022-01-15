@@ -1,4 +1,5 @@
 % Question 4
+%
 % Fonction effectuant une modulation DSSS suivie d'une modulation 
 % BPSK d'un signal.
 % 

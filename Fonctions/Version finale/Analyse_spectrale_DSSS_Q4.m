@@ -1,4 +1,6 @@
-%Analyse spectrale Q4, script test
+% Analyse spectrale Q4, script test
+%
+% Fichier utilisé pour l'analyse spectrale de la modulation DSSS.
 
 m_bin = [1, 0, 1];
 p = [1, 0, 1, 0, 1];

@@ -1,6 +1,6 @@
 % Question 1
 %
-% Fonction affichant le spectre d'un signal
+% Fonction affichant le spectre d'un signal.
 % fftshift recentre le spectre fréquetiel en zéro. La valeur absolue est
 % là pour permettre d'obtenir une amplitude et non un nombre complexe.
 % 

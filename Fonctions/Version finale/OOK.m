@@ -1,7 +1,7 @@
 % Question 3
 %
-% Impémentation d'une modulation OOK. On regarde le vecteur binaire bin, 
-% aux endroits où sont placés des 1, le signal modulé va prendre les 
+% Fonction effectuant d'une modulation OOK. On regarde le vecteur binaire 
+% bin, aux endroits où sont placés des 1, le signal modulé va prendre les 
 % valeurs de la porteuse pendant une période Ts.
 % 
 % Paramètres
