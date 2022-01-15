@@ -8,7 +8,7 @@ M = 100      %characterizes M-ary message
 m_bin = rbin(M);
 
 Tb = 0.1;       % Duration of m_bin's binary symbols
-Fs = 1000;      % Sampling frequency
+Fs = 2*500;      % Sampling frequency
 
 Amax = 10;       % Amplitude of carrier signal
 Fc = 100 ;        % Frequency of the carrier

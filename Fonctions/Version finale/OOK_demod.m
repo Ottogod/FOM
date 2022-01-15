@@ -38,6 +38,6 @@ function [s, s_bin] = OOK_demod(r, Amax, Fc, Fs, Tb)
     s_bin = zeros(1, n_bit_m);
 
     for i=1:n_bit_m
-        s_bin(i) = s2((i-1)*Fs*Tb+Fs*Tb/2);
+        s_bin(i) = s2(floor((i-1)*Fs*Tb+Fs*Tb/2));
     end
 end
