@@ -27,7 +27,7 @@ function [s, s_bin] = OOK_demod(r, Amax, Fc, Fs, Tb)
     
     min_s = min(s);
     max_s = max(s);
-    av = (max_s + min_s) / 2;
+    av = (max_s + min_s) / 3;
   
     s2 = zeros(1, length(t));
 
