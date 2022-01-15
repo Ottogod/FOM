@@ -32,15 +32,16 @@ function [s, s_bin] = DSSS_BPSK_demod(r, p_bin, Amax, Fc, Fs, Tb)
 
     s1 = r.*p;      % We multiply the signal by the signal corresponding to the pseudo random code
     s2 = s1.*c;     % We multiply the obtained signal by the carrier to obtain the demodulated signal
+    s = lowpass(s2, Fc/2, Fs);     % We apply a lowpass filter to the obtained signal
 
-    s = zeros(1, length(t));
+    s3 = zeros(1, length(t));
 
     for i=1:n_bit_m
-        s(((i-1)*Fs*Tb+1):((i)*Fs*Tb)) = mean(s2(((i-1)*Fs*Tb+1):((i)*Fs*Tb))) > 0;
+        s3(((i-1)*Fs*Tb+1):((i)*Fs*Tb)) = mean(s(((i-1)*Fs*Tb+1):((i)*Fs*Tb))) > 0;
     end
 
     s_bin = zeros(1, n_bit_m);
     for i = 1:n_bit_m
-        s_bin(i) = s((i-1)*Fs*Tb+Fs*Tb/2) > 0;
+        s_bin(i) = s3((i-1)*Fs*Tb+Fs*Tb/2) > 0;
     end
 end

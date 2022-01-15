@@ -1,5 +1,6 @@
 % Question 2
 %
+% Fonction générant un suite aléatoire de bits
 % Avec randn on génère un vecteur ligne de n colonnes de réels aléatoires 
 % suivant une loi normale. On transforme chaque nombre en booléen (0 ou 1)
 % suivant s'ils sont positifs ou non. Par exemple on pourrait avoir 
