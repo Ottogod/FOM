@@ -21,7 +21,7 @@ function [s, s_bin] = DSSS_BPSK_demod(r, p_bin, Amax, Fc, Fs, Tb)
     tot_duration = length(r)/Fs;        % Total duration of signal
     t = 0 : 1/Fs : tot_duration - 1/Fs;     % Time vector
 
-    n_bit_m = tot_duration/Tb;      % Number of bits in m_bin
+    n_bit_m = ceil(tot_duration/Tb);      % Number of bits in m_bin
     n_bit_p = length(p_bin);        % Number of bits in p_bin
     Tp = Tb/n_bit_p;        % Duration of p_bin's binary symbols
     
@@ -42,6 +42,6 @@ function [s, s_bin] = DSSS_BPSK_demod(r, p_bin, Amax, Fc, Fs, Tb)
 
     s_bin = zeros(1, n_bit_m);
     for i = 1:n_bit_m
-        s_bin(i) = s3(floor((i-1)*Fs*Tb+Fs*Tb/2)) > 0;      %(we need that Tb*Fs/2 is an integer)
+        s_bin(i) = s3(floor((i-1)*Fs*Tb+Fs*Tb/2)) > 0;
     end
 end
